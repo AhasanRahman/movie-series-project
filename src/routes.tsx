@@ -3,7 +3,7 @@ import Home from "./pages/home";
 import Error from "./pages/error";
 import Bookmark from "./pages/bookmark";
 import TvSeries from "./pages/tv-series";
-import Movies from "./pages/movies";
+import Movies from "./pages/movie";
 
 export const router = createBrowserRouter([
 
@@ -18,13 +18,14 @@ export const router = createBrowserRouter([
         errorElement: <Error />,
     },
     {
+        path: "/tv-series",
+        element: <TvSeries />,
+        errorElement: <Error />,
+    },
+    {
         path: "/bookmark",
         element: <Bookmark />,
         errorElement: <Error />,
     },
-    {
-        path: "/tvseries",
-        element: <TvSeries />,
-        errorElement: <Error />,
-    },
+    
 ]);
