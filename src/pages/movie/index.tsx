@@ -1,9 +1,9 @@
  import { SetStateAction, useContext, useState } from "react";
 import { Typography, InputAdornment, InputBase, Paper, Box } from "@mui/material";
-import { MovieContext } from "../../context/movie-context";
+import { MovieContext } from "../../context/movies-context";
 import { MovieDataType } from "../../assets/data";
 import SearchIcon from "../../assets/icons/icon-search.svg";
-import Layout from "../../Layout";
+import Layout from "../../layout";
 import MovieList from "../../components/movie-list";
  
 

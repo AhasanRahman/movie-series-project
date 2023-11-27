@@ -1,10 +1,10 @@
  
 import { SetStateAction, useContext, useState } from "react";
 import { Typography, InputAdornment, InputBase, Paper, Box } from "@mui/material";
-import { MovieContext } from "../../context/movie-context";
+import { MovieContext } from "../../context/movies-context";
 import { MovieDataType } from "../../assets/data";
 import SearchIcon from "../../assets/icons/icon-search.svg";
-import Layout from "../../Layout";
+import Layout from "../../layout";
 import MovieList from "../../components/movie-list";
  
 
@@ -14,7 +14,7 @@ const [search, setSearch] = useState("");
 const [searchList, setSearchList] = useState<MovieDataType[]>([]);
 const { state } = useContext(MovieContext);
 const { Movies } = state;
-const tvSeries = Movies.filter((movie) => movie.category === "Tv Series");
+const tvSeries = Movies.filter((item) => item.category === "TV Series");
 const handleSearch = (e: { target: { value: SetStateAction<string> } }) => {
     setSearch(e.target.value);
     const newList = Movies.filter((movie) => movie.title.toLowerCase().includes(search.toLowerCase()));
@@ -55,7 +55,7 @@ return (
             <Typography variant="h5" component="h1" my={6} fontWeight={400}>
               Tv series
             </Typography>
-            <MovieList recommendList={search=== "" ?  Movies : searchList} />
+            <MovieList recommendList={search=== "" ?  tvSeries  : searchList} />
           </Box>
         
       ) : (

@@ -1,10 +1,9 @@
-
 import { useContext } from "react";
 import { Card, CardContent, Typography, Box, Grid } from "@mui/material";
 import { MovieDataType } from "../../assets/data";
-// import { MovieContext } from "../../context/movies-context";
-// import BookmarkIcon from "../icons/bookmark-icon";
-// import BookmarkEmptyIcon from "../icons/bookmark-empy-icon";
+import { MovieContext } from "../../context/movies-context";
+import BookmarkIcon from "../icons/bookmark-icon";
+import BookmarkEmptyIcon from "../icons/bookmark-empy-icon";
 import tvSeriesIcon from "../../assets/icons/icon-category-tv.svg";
 import moviesIcon from "../../assets/icons/icon-category-movie.svg";
 
@@ -12,11 +11,11 @@ interface MovieCardProps {
   movie: MovieDataType;
 }
 const MovieCard = ({ movie }: MovieCardProps) => {
-//   const { dispatch } = useContext(MovieContext);
+  const { dispatch } = useContext(MovieContext);
 
-//   const handleToggleBookmark = (id: string) => {
-//     dispatch({ type: "TOOGLE BOOKMARK", id });
-//   };
+  const handleToggleBookmark = (id: string) => {
+    dispatch({ type: "TOOGLE BOOKMARK", id });
+  };
 
   return (
     <Card variant="outlined" sx={{ bgcolor: "transparent", color: "#E0E0E0", my: 3, border: "none" }}>
@@ -80,16 +79,16 @@ const MovieCard = ({ movie }: MovieCardProps) => {
               }}
             >
               <Box
-                // sx={{
-                //   p: "1rem",
-                //   backgroundColor: "black",
-                //   borderRadius: "100%",
-                //   cursor: "pointer",
-                //   "&:hover": { opacity: 0.8 },
-                // }}
-                // onClick={() => handleToggleBookmark(movie.id)}
+                sx={{
+                  p: "1rem",
+                  backgroundColor: "black",
+                  borderRadius: "100%",
+                  cursor: "pointer",
+                  "&:hover": { opacity: 0.8 },
+                }}
+                onClick={() => handleToggleBookmark(movie.id)}
               >
-                {/* {movie.isBookmarked ? <BookmarkIcon fill={"#E0E0E0"} /> : <BookmarkEmptyIcon />} */}
+                {movie.isBookmarked ? <BookmarkIcon fill={"#E0E0E0"} /> : <BookmarkEmptyIcon />}
               </Box>
             </Box>
           </Grid>

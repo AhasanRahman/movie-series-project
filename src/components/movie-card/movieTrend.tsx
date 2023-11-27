@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import { MovieDataType } from '../../assets/data';
-import { MovieContext } from '../../context/movie-context';
+import { MovieContext } from '../../context/movies-context';
 import {Card,Box, CardContent, Grid,Stack,Typography} from "@mui/material";
 import moviesIcon from '../../assets/icons/icon-category-movie.svg';
 import tvSeriesIcon  from '../../assets/icons/icon-category-tv.svg';
-// import BookmarkIcon from "../icons/bookmark-icon";
-// import BookmarkEmptyIcon from "../icons/bookmark-empty-icon";
+import BookmarkIcon from "../icons/bookmark-icon";
+import BookmarkEmptyIcon from "../icons/bookmark-empy-icon";
  
  
 
@@ -15,9 +15,9 @@ interface MovieTrendCardProps {
 
 const MovieTrendCard = ({movie}: MovieTrendCardProps) => {
     const {dispatch} = useContext(MovieContext);
-// const handleToggleBookmark =(id: string)=>{
-//     dispatch({type: "TOGGLE BOOKMARK", id});
-// }
+const handleToggleBookmark =(id: string)=>{
+    dispatch({type: "TOGGLE BOOKMARK", id});
+}
 
     return  (
         <Card 

@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Home from "./pages/home";
 import Error from "./pages/error";
-import Bookmark from "./pages/bookmark";
+import Bookmarks from "./pages/bookmark";
 import TvSeries from "./pages/tv-series";
 import Movies from "./pages/movie";
 
@@ -23,8 +23,8 @@ export const router = createBrowserRouter([
         errorElement: <Error />,
     },
     {
-        path: "/bookmark",
-        element: <Bookmark />,
+        path: "/bookmarks",
+        element: <Bookmarks />,
         errorElement: <Error />,
     },
     
